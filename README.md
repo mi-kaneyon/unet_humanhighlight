@@ -83,7 +83,8 @@ python scripts/data_collection.py
     - Saves images and masks into data/images and data/masks, respectively, at the chosen resolution.
     - Press q to stop data collection.
 
->[Note]: Ensure that the data_collection.py script has been modified to generate data compatible with U-Net (same resolution, e.g., 512x512).
+[Note]
+>: Ensure that the data_collection.py script has been modified to generate data compatible with U-Net (same resolution, e.g., 512x512).
 
 
 
