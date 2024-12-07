@@ -77,8 +77,8 @@ mkdir -p data/images data/masks models scripts
 python scripts/data_collection.py
 
 ```
+![masked image by data_collection.py](frame_00009_mask.png)
 
-[Contribution guidelines for this project](frame_00009_mask.png)
 
     - Opens the webcam and captures frames.
     - Runs DeepLabV3 to generate human segmentation masks.
