@@ -78,6 +78,8 @@ python scripts/data_collection.py
 
 ```
 
+[Contribution guidelines for this project](frame_00009_mask.png)
+
     - Opens the webcam and captures frames.
     - Runs DeepLabV3 to generate human segmentation masks.
     - Saves images and masks into data/images and data/masks, respectively, at the chosen resolution.
