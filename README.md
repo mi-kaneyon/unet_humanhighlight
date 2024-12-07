@@ -83,9 +83,70 @@ python scripts/data_collection.py
     - Saves images and masks into data/images and data/masks, respectively, at the chosen resolution.
     - Press q to stop data collection.
 
-[Note]
+> [!NOTE]
 >: Ensure that the data_collection.py script has been modified to generate data compatible with U-Net (same resolution, e.g., 512x512).
 
+2. Model Training
+
+**Script: real_train.py**
+- Purpose: Train the U-Net model on the collected dataset.
+
+```bash
+python scripts/real_train.py
 
 
+```
+> [!RIP]
+### What it does:
+
+    - Reads configuration from config.yaml (e.g., batch size, learning rate, epochs).
+    - Loads training images and masks from data/.
+    - Trains U-Net and saves unet_model.pth into models/.
+
+> [!NOTE]
+> Adjust config.yaml as needed for hyperparameters and paths.
+
+
+
+
+3. Evaluation & Visualization
+
+**Script: compare_performance.py or compare_3pics.py**
+> Purpose: Compare the predicted U-Net masks with the ground-truth (pseudo-labeled) masks.
+
+```bash
+python scripts/compare_performance.py
+
+```
+> [!TIP]
+### What it does:
+
+    - Iterates through data/images and data/masks.
+    - Uses the trained U-Net model (unet_model.pth) to generate predictions.
+    - Displays comparisons: Input Image vs Ground Truth Mask vs Predicted Mask.
+
+### For alternative visualization approaches, use:
+
+```bash
+python scripts/compare_3pics.py
+
+```
+
+4. Real-Time Inference
+
+**Script: real_time_segmentation.py**
+- Purpose: Run the U-Net model on live webcam input and visualize the segmentation results in real-time at the same resolution used during training.
+
+```bash
+python scripts/real_time_segmentation.py
+
+```
+
+
+> [!TIP]
+> ### What it does:
+> - Opens your webcam feed.
+> - Resizes frames to the training resolution (e.g., 512x512), performs inference with U-Net.
+> - Resizes the predicted mask back to the original frame size and displays it.
+> - Press q to quit.
 
